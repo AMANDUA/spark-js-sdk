@@ -17,6 +17,11 @@ module.exports = (env = process.env.NODE_ENV || 'production') => ({
     sourceMapFilename: '[file].map',
     path: `${path.resolve(__dirname)}/packages/node_modules/samples`
   },
+  performance: {
+    maxAssetSize: 200000,
+    hints: false,
+    maxEntrypointSize: 512000,
+  },
   devtool: env === 'development' ? 'cheap-module-source-map' : 'source-map',
   devServer: {
     https: true,
